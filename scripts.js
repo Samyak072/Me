@@ -6,7 +6,7 @@
     // Predefined Content Strings
     const contactString = `
         <div class='social'>
-            <a href='mailto:your.email@example.com'>
+            <a href='mailto:samyak@example.com'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/gmail.svg' alt='Gmail'>
                 </div>
@@ -16,7 +16,7 @@
                     <img class='socialItemI' src='images/github.svg' alt='GitHub'>
                 </div>
             </a>
-            <a target='_blank' href='https://wa.me/YourWhatsAppNumber'>
+            <a target='_blank' href='https://wa.me/919876543210'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/whatsapp.svg' alt='WhatsApp'>
                 </div>
@@ -205,7 +205,7 @@
                 await delay(2000);
                 sendTextMessage(`
                     Hello there 👋🏻 <br><br>
-                    My name is <span class='bold'><a class='alink'>[Your Name]</a>.</span><br><br>
+                    My name is <span class='bold'><a class='alink'>Samyak</a>.</span><br><br>
                     I am a Lead R&D Engineer currently experimenting mostly on Cybersecurity <span class='bold'>👨🏻‍💻📚</span><br><br>
                     I have experience around building and scaling applications with security over various emerging technologies.<br><br>
                     Send <span class='bold'>'more'</span> to know more about me.<br>
@@ -298,3 +298,4 @@
     // Initialize the Chat Functionality
     init();
 })();
+

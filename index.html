@@ -67,40 +67,41 @@
     </footer>
 
     <script>
-        // Function to send message
+        // Function to send a message
         function sendMsg() {
             let input = document.getElementById("inputMSG");
-            let message = input.value.trim(); // Remove extra spaces
+            let message = input.value.trim();
             if (message !== "") {
                 let ul = document.getElementById("listUL");
                 let li = document.createElement("li");
                 li.textContent = message;
                 ul.appendChild(li);
-                input.value = ""; // Clear the input field after sending
-                ul.scrollTop = ul.scrollHeight; // Auto-scroll to the bottom
+                input.value = ""; // Clear input field after sending
+                ul.scrollTop = ul.scrollHeight; // Auto-scroll to the bottom of the chat
             }
         }
 
-        // Function to handle enter key press
+        // Function to handle pressing the Enter key
         function isEnter(event) {
             if (event.key === "Enter") {
-                sendMsg(); // Trigger sendMsg when Enter key is pressed
+                event.preventDefault(); // Prevent form submission
+                sendMsg();
             }
         }
 
-        // Function to open full-screen profile picture
+        // Function to open the full-screen profile picture
         function openFullScreenDP() {
             document.getElementById("fullScreenDP").style.display = "block";
         }
 
-        // Function to close full-screen profile picture
+        // Function to close the full-screen profile picture
         function closeFullDP() {
             document.getElementById("fullScreenDP").style.display = "none";
         }
 
-        // Optional function that might be needed at the start
+        // Function that runs when the page loads (optional)
         function startFunction() {
-            // You can initialize or run anything when the page loads
+            // You can initialize or run any logic when the page loads
         }
     </script>
 

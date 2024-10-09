@@ -99,9 +99,13 @@
             document.getElementById("fullScreenDP").style.display = "none";
         }
 
-        // Function that runs when the page loads (optional)
+        // Function that runs when the page loads, and displays the initial chatbot message
         function startFunction() {
-            // You can initialize or run any logic when the page loads
+            let ul = document.getElementById("listUL");
+            let li = document.createElement("li");
+            li.textContent = "Hello! How can I assist you today?"; // Initial chatbot message
+            ul.appendChild(li);
+            ul.scrollTop = ul.scrollHeight; // Auto-scroll to the bottom of the chat
         }
     </script>
 

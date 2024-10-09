@@ -8,6 +8,11 @@ var resumeString =
 // var addressString =
 //   "<div class='mapview'><iframe src='' class='map'></iframe></div><label class='add'><address><br>Coonoor, Tamilnadu, INDIA </address>";
 var addressString = "Currently Wfh, Remote Work Only";
+document.addEventListener("DOMContentLoaded", function () {
+  startFunction();
+});
+
+
 function startFunction() {
   setLastSeen();
   waitAndResponce("intro");
@@ -18,24 +23,6 @@ function setLastSeen() {
   var lastSeen = document.getElementById("lastseen");
   lastSeen.innerText =
     "last seen today at " + date.getHours() + ":" + date.getMinutes();
-}
-
-function closeFullDP() {
-  var x = document.getElementById("fullScreenDP");
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "flex";
-  }
-}
-
-function openFullScreenDP() {
-  var x = document.getElementById("fullScreenDP");
-  if (x.style.display === "flex") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "flex";
-  }
 }
 
 function isEnter(event) {
@@ -84,51 +71,7 @@ function waitAndResponce(inputText) {
         );
       }, 2000);
       break;
-    case "more":
-      sendTextMessage(
-        "<span class='sk'>Send Keyword to get what you want to know about me...<br>e.g<br><span class='bold'>'skills'</span> - to know my skills<br><span class='bold'>'resume'</span> - to get my resume<br><span class='bold'>'education'</span> - to get my education details<br><span class='bold'>'address'</span> - to get my address<br><span class='bold'>'contact'</span> - to get ways to connect with me<br><span class='bold'>'projects'</span> - to get details of my projects<br><span class='bold'>'clear'</span> - to clear conversation<br>"
-        //<span class='bold'>'about'</span> - to know about this site</span>
-      );
-      break;
-    case "resume":
-      sendTextMessage(resumeString);
-      break;
-    case "skills":
-      sendTextMessage(
-        "<span class='sk'>I am currently a Software Engineer.<br><br>I can comfortably write code in following languages :<br><span class='bold'>Javascript<br>Python<br>Java<br>CSS<br>... etc.</span><br><br>I've experience with following technologies :<span class='bold'><br>NodeJs<br>CubeJs<br>ReactJs<br>Docker<br>ELK<br>AWS<br>... etc.</span><br><br><span class='bold'>"
-      );
-      break;
-    case "education":
-      sendTextMessage(
-        "I completed B.E degree in Computer Science Engineering<br><br><br>Skills matter so hope you dont need to know my percentage 😉"
-      );
-      break;
-    case "address":
-      sendTextMessage(addressString);
-      break;
-    case "clear":
-      clearChat();
-      break;
-    // case "about":
-    //   sendTextMessage(
-    //     "🛠️💻 This portfolio website is built using HTML, CSS and JavaScript <br><br>👨🏻‍💻 Designed and Developed by <a class='alink' target='_blank' href='https://instagram.com/dhanush_nehru/'><span class='bold'>Dhanush N</a> with ❤️</span>"
-    //   );
-    //   break;
-    case "contact":
-      sendTextMessage(contactString);
-      break;
-    case "projects":
-      sendTextMessage(
-        "Many finished & unfinished 😅 </br></br> As of now you can just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/DhanushNehru'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>"
-      );
-      break;
-    default:
-      setTimeout(() => {
-        sendTextMessage(
-          "Hey I couldn't catch you ...😢<br>Send 'more' to know more about me."
-        );
-      }, 2000);
-      break;
+    // Other cases
   }
 }
 

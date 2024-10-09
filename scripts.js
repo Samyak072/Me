@@ -1,10 +1,10 @@
 var audio = new Audio("assets/whatsappNotificationTone.mp3");
 var contactString =
-  "<div class='social'> <a href='mailto:dhanushnehrustudio@gmail.com'> <div class='socialItem'><img class='socialItemI' src='images/gmail.svg' alt=''></div> </a> <a target='_blank' href='https://github.com/DhanushNehru'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a> <a target='_blank' href='https://wa.me/918072157649'> <div class='socialItem'></div> </a> <a target='_blank' href='https://t.me/DhanushNehru'>  </a> <a target='_blank' href='https://instagram.com/dhanush_nehru'> <div class='socialItem'><img class='socialItemI' src='images/instagram.svg' alt=''> </div> </a> " +
-  //"<div> <a href='https://www.linkedin.com/in/dhanushnehru/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/linkedin.svg' alt=''></div> </a> </div>" +
-  "<div> <a href='https://www.twitter.com/Dhanush_Nehru/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/twitter.svg' alt=''></div> </a> </div>";
+  "<div class='social'> <a href='mailto:samyakmishra61@gmail.com'> <div class='socialItem'><img class='socialItemI' src='images/gmail.svg' alt=''></div> </a> <a target='_blank' href='https://github.com/DhanushNehru'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a> <a target='_blank' href='https://wa.me/918072157649'> <div class='socialItem'></div> </a> <a target='_blank' href='https://t.me/DhanushNehru'>  </a> <a target='_blank' href='https://instagram.com/dhanush_nehru'> <div class='socialItem'><img class='socialItemI' src='images/instagram.svg' alt=''> </div> </a> " +
+  //"<div> <a href='https://www.linkedin.com/in/samyak072/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/linkedin.svg' alt=''></div> </a> </div>" +
+  "<div> <a href='https://www.twitter.com/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/twitter.svg' alt=''></div> </a> </div>";
 var resumeString =
-  "Resume to be updated fully !!! </br> </br> <img src='images/resumeThumbnail.png' class='resumeThumbnail'><div class='downloadSpace'><div class='pdfname'><img src='images/pdf.png'><label>Dhanush Resume.pdf</label></div><a href='assets/DhanushResume.pdf' download='Dhanush_Nehru_Resume.pdf'><img class='download' src='images/downloadIcon.svg'></a></div>";
+  "Resume to be updated fully !!! </br> </br> <img src='images/resumeThumbnail.png' class='resumeThumbnail'><div class='downloadSpace'><div class='pdfname'><img src='images/pdf.png'><label>Samyak Resume.pdf</label></div><a href='assets/Profile.pdf' download='Profile.pdf'><img class='download' src='images/downloadIcon.svg'></a></div>";
 // var addressString =
 //   "<div class='mapview'><iframe src='' class='map'></iframe></div><label class='add'><address><br>Coonoor, Tamilnadu, INDIA </address>";
 var addressString = "Currently Wfh, Remote Work Only";
@@ -80,8 +80,11 @@ function waitAndResponce(inputText) {
     case "intro":
       setTimeout(() => {
         sendTextMessage(
-          "Hello there 👋🏻 <br><br>My name is <span class='bold'><a class='alink'>Dhanush N</a>.</span><br><br>I am a Lead R&D Engineer currently experimenting mostly on Cybersecurity <span class='bold'>👨🏻‍💻📚</span><br><br>I have experience around building and scaling applications with security over various emerging technologies.<br><br>Send <span class='bold'>'more'</span> to know more about me.<br>"
-        );
+         Hello there 👋🏻 <br><br>
+My name is <span class="bold"><a href="#" class="alink">Samyak Mishra</a> 👨🏻‍💻📚</span><br><br>
+I have experience in building and scaling applications with security over various emerging technologies.<br><br>
+Send <span class="bold">'more'</span> to know more about me.<br>
+
       }, 2000);
       break;
     case "more":

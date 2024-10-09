@@ -6,7 +6,7 @@
     // Predefined Content Strings
     const contactString = `
         <div class='social'>
-            <a href='mailto:samyak@example.com'>
+            <a href='mailto:your.email@example.com'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/gmail.svg' alt='Gmail'>
                 </div>
@@ -16,7 +16,7 @@
                     <img class='socialItemI' src='images/github.svg' alt='GitHub'>
                 </div>
             </a>
-            <a target='_blank' href='https://wa.me/919876543210'>
+            <a target='_blank' href='https://wa.me/YourWhatsAppNumber'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/whatsapp.svg' alt='WhatsApp'>
                 </div>
@@ -118,7 +118,7 @@
     function toggleFullScreenDP() {
         const fullScreenDP = document.getElementById("fullScreenDP");
         if (fullScreenDP) {
-            fullScreenDP.style.display = (fullScreenDP.style.display === "flex") ? "none" : "flex";
+            fullScreenDP.classList.toggle('active');
         }
     }
 
@@ -170,7 +170,7 @@
         } else if (type === "received") {
             myDiv.className = "received";
             messageDiv.className = "grey";
-            messageDiv.innerHTML = message; // Ensure message is sanitized
+            messageDiv.innerHTML = sanitizeHTML(message); // Sanitize to prevent XSS
         }
 
         messageDiv.appendChild(dateLabel);
@@ -197,6 +197,7 @@
 
     // Wait and Respond Based on Input
     async function waitAndResponse(inputText) {
+        showTypingIndicator();
         setLastSeen("typing...");
         await delay(1000); // Simulate typing delay
 
@@ -271,6 +272,7 @@
                 break;
         }
 
+        hideTypingIndicator();
         setLastSeen();
     }
 
@@ -290,12 +292,34 @@
         waitAndResponse("intro");
     }
 
+    // Show Typing Indicator
+    function showTypingIndicator() {
+        const typingIndicator = document.getElementById('typingIndicator');
+        if (typingIndicator) {
+            typingIndicator.style.display = 'flex';
+        }
+    }
+
+    // Hide Typing Indicator
+    function hideTypingIndicator() {
+        const typingIndicator = document.getElementById('typingIndicator');
+        if (typingIndicator) {
+            typingIndicator.style.display = 'none';
+        }
+    }
+
     // Utility Function to Delay Execution
     function delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    // Sanitize HTML to Prevent XSS
+    function sanitizeHTML(str) {
+        const temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    }
+
     // Initialize the Chat Functionality
     init();
 })();
-

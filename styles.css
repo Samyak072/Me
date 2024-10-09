@@ -238,15 +238,15 @@ nav {
 
 .sent {
     align-self: flex-end;
-    background-color: #b3d9ff ;
-    color: var(--text-color);
+    background-color: #FF6347; /* Tomato */
+    color: #FFFFFF; /* White text */
     border-bottom-right-radius: 0;
 }
 
 .received {
     align-self: flex-start;
-    background-color: #e6f2ff;
-    color: var(--text-color);
+    background-color: #FFE4E1; /* Misty Rose */
+    color: #000000; /* Black text */
     border-bottom-left-radius: 0;
 }
 

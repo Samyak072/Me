@@ -28,7 +28,7 @@ This project is built with a focus on providing an engaging and intuitive user e
 
   git clone https://github.com/Samyak072/Me.git
 
-Contributing:
+## Contributing:
 
 Contributions are welcome! To contribute:
 

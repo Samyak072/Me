@@ -69,18 +69,24 @@ nav {
     flex-direction: column;
     align-items: flex-end;
     position: relative;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
 
 .scrollable::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome, Safari and Opera */
 }
 
 .chatting {
     flex: 1;
     width: 100%;
     overflow-y: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.chatting::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 #listUL {

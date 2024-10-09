@@ -6,32 +6,32 @@
     // Predefined Content Strings
     const contactString = `
         <div class='social'>
-            <a href='mailto:your.email@example.com'>
+            <a href='mailto:sm2.cse.tmsl@ticollege.org'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/gmail.svg' alt='Gmail'>
                 </div>
             </a>
-            <a target='_blank' href='https://github.com/YourGitHubUsername'>
+            <a target='_blank' href='https://github.com/Samyak072'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/github.svg' alt='GitHub'>
                 </div>
             </a>
-            <a target='_blank' href='https://wa.me/919876543210'>
+            <a target='_blank' href='https://wa.me/'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/whatsapp.svg' alt='WhatsApp'>
                 </div>
             </a>
-            <a target='_blank' href='https://t.me/YourTelegramUsername'>
+            <a target='_blank' href='https://t.me/'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/telegram.svg' alt='Telegram'>
                 </div>
             </a>
-            <a target='_blank' href='https://instagram.com/YourInstagramUsername'>
+            <a target='_blank' href='https://instagram.com/samyak072'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/instagram.svg' alt='Instagram'>
                 </div>
             </a>
-            <a href='https://www.twitter.com/YourTwitterUsername/' target='_blank' rel='noopener noreferrer'>
+            <a href='https://www.twitter.com/' target='_blank' rel='noopener noreferrer'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/twitter.svg' alt='Twitter'>
                 </div>
@@ -45,9 +45,9 @@
         <div class='downloadSpace'>
             <div class='pdfname'>
                 <img src='images/pdf.png' alt='PDF Icon'>
-                <label>Your Resume.pdf</label>
+                <label>Samyak_Mishra.pdf</label>
             </div>
-            <a href='assets/YourResume.pdf' download='Your_Name_Resume.pdf'>
+            <a href='assets/YourResume.pdf' download='Samyak_Mishra_Resume.pdf'>
                 <img class='download' src='images/downloadIcon.svg' alt='Download Resume'>
             </a>
         </div>
@@ -207,8 +207,8 @@
                 sendTextMessage(`
                     Hello there 👋🏻 <br><br>
                     My name is <span class='bold'><a class='alink'>Samyak</a>.</span><br><br>
-                    I am a Lead R&D Engineer currently experimenting mostly on Cybersecurity <span class='bold'>👨🏻‍💻📚</span><br><br>
-                    I have experience around building and scaling applications with security over various emerging technologies.<br><br>
+                    Aspiring SDE | C++ | Java | Golang | ML | DSA | OS Contributor | Content Writer | Public Speaker | <span class='bold'>👨🏻‍💻📚</span><br><br>
+                    I am interested in solving DSA problems and unravelling different CS concepts.<br><br>
                     Send <span class='bold'>'more'</span> to know more about me.<br>
                 `);
                 break;
@@ -233,22 +233,23 @@
             case "skills":
                 sendTextMessage(`
                     <span class='sk'>
-                        I am currently a Software Engineer.<br><br>
+                        I am an Aspiring Software Development Engineer.<br><br>
                         I can comfortably write code in the following languages:<br>
                         <span class='bold'>
-                            JavaScript<br>Python<br>Java<br>CSS<br>... etc.
+                            C++<br>Python<br>Java<br>Golang<br>C<br>... etc.
                         </span><br><br>
                         I have experience with the following technologies:<br>
                         <span class='bold'>
-                            NodeJs<br>CubeJs<br>ReactJs<br>Docker<br>ELK<br>AWS<br>... etc.
+                            TensorFlow<br>Pytorch<br>Keras<br>OpenCV<br>AWS (Learning) <br>... etc.
                         </span><br><br>
                     </span>
                 `);
                 break;
             case "education":
                 sendTextMessage(`
-                    I completed a B.E. degree in Computer Science Engineering.<br><br>
+                    I shall be graduating in 2026 from Techno Main Salt Lake.I am Currently enrolled in B.Tech. program in Computer Science & Engineering.<br><br>
                     Skills matter, so I hope you don't need to know my percentage 😉
+                    You can surely checkout my different Tech Profiles. 
                 `);
                 break;
             case "address":
@@ -259,8 +260,8 @@
                 break;
             case "projects":
                 sendTextMessage(`
-                    Many finished & unfinished 😅 <br><br>
-                    As of now, you can just jump into my <a class='alink' href='https://github.com/YourGitHubUsername' target='_blank'>GitHub Account</a>.<br><br>
+                    Some finished & unfinished 😅 <br><br>
+                    As of now, you can just jump into my <a class='alink' href='https://github.com/Samyak072' target='_blank'>GitHub Handle</a>.<br><br>
                 `);
                 break;
             case "clear":

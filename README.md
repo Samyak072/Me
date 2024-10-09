@@ -4,12 +4,6 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Project Structure](#project-structure)
-- [Future Enhancements](#future-enhancements)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -33,3 +27,13 @@ This project is built with a focus on providing an engaging and intuitive user e
   Clone the repository:
 
   git clone https://github.com/Samyak072/Me.git
+
+Contributing:
+
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes and commit them (git commit -m "Add new feature").
+Push to the branch (git push origin feature-branch).
+Open a Pull Request.

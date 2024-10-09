@@ -1,3 +1,49 @@
+:root {
+    /* Light Mode Variables */
+    --primary-color: #0084ff;
+    --secondary-color: #00aaff;
+    --background-gradient-start: #f3e5f5;
+    --background-gradient-end: #a7c0d8;
+    --sent-message-bg: rgba(0, 132, 255, 0.8);
+    --received-message-bg: rgba(44, 44, 44, 0.8);
+    --text-color: #ffffff;
+    --link-color: #ffa500;
+    --link-hover-color: #ff4500;
+    --scrollbar-thumb-color: rgba(0, 132, 255, 0.6);
+    --scrollbar-thumb-hover-color: rgba(0, 132, 255, 0.8);
+}
+
+.dark-mode {
+    --primary-color: #1e90ff;
+    --secondary-color: #00ced1;
+    --background-gradient-start: #1c1c1c;
+    --background-gradient-end: #2c2c2c;
+    --sent-message-bg: rgba(30, 144, 255, 0.8);
+    --received-message-bg: rgba(68, 68, 68, 0.8);
+    --text-color: #f0f0f0;
+    --link-color: #ffa500;
+    --link-hover-color: #ff4500;
+    --scrollbar-thumb-color: rgba(30, 144, 255, 0.6);
+    --scrollbar-thumb-hover-color: rgba(30, 144, 255, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =====================================
    Import Google Fonts
 ===================================== */

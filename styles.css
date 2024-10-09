@@ -239,7 +239,7 @@ nav {
 .sent {
     align-self: flex-end;
     background-color: #98FF98; /* Mint Green */
-    color: #000000; /* Black text for contrast */
+    color: #AA0000; /* Black text for contrast */
     border-bottom-right-radius: 0;
     border-radius: 15px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -248,7 +248,7 @@ nav {
 .received {
     align-self: flex-start;
     background-color: #E6E6FA; /* Lavender */
-    color: #000000; /* Black text for contrast */
+    color: #AA0000; /* Black text for contrast */
     border-bottom-left-radius: 0;
     border-radius: 15px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;

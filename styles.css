@@ -114,13 +114,16 @@ nav {
     flex-direction: column;
 }
 
+/* =====================================
+   Sent and Received Messages with Animations
+===================================== */
 .sent, .received {
     max-width: 70%;
     padding: 10px 15px;
     border-radius: 20px;
     position: relative;
     word-wrap: break-word;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .sent {
@@ -194,11 +197,13 @@ nav {
     padding: 10px;
     background-color: #3a3a3a;
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .social .socialItem:hover {
     background-color: #575757;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .social .socialItem img {
@@ -213,6 +218,7 @@ nav {
     width: 100%;
     border-radius: 10px 10px 0 0;
     margin-bottom: 10px;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .downloadSpace {
@@ -222,6 +228,7 @@ nav {
     background-color: #1d282f;
     padding: 10px;
     border-radius: 0 0 10px 10px;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .downloadSpace .pdfname {
@@ -299,6 +306,11 @@ footer {
     fill: #00aaff;
 }
 
+.sendBar svg:active {
+    transform: scale(0.95);
+    fill: #00aaff;
+}
+
 /* =====================================
    Full Screen Profile Picture Styles
 ===================================== */
@@ -313,11 +325,15 @@ footer {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    animation: fadeIn 0.5s ease;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .fullScreenDP.active {
     display: flex;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .insideDP {
@@ -329,6 +345,7 @@ footer {
     max-height: 80%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .closeBTN {
@@ -360,23 +377,74 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
+}
+
+@keyframes blink {
+    0%, 80%, 100% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =====================================
+   Typing Indicator Styles
+===================================== */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.typing-indicator .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: blink 1.4s infinite both;
+}
+
+.typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 /* =====================================
@@ -441,5 +509,15 @@ footer {
     .sendBar svg {
         width: 30px;
         height: 30px;
+    }
+}
+
+/* =====================================
+   Accessibility: Reduce Motion
+===================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }

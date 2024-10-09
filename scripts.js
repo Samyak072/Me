@@ -149,35 +149,36 @@
     }
 
     // Create and Append Message Element
-    function createMessageElement(message, type) {
-        const date = new Date();
-        const listUL = document.getElementById("listUL");
+function createMessageElement(message, type) {
+    const date = new Date();
+    const listUL = document.getElementById("listUL");
 
-        if (!listUL) return;
+    if (!listUL) return;
 
-        const myLI = document.createElement("li");
-        const myDiv = document.createElement("div");
-        const messageDiv = document.createElement("div");
-        const dateLabel = document.createElement("label");
+    const myLI = document.createElement("li");
+    const myDiv = document.createElement("div");
+    const messageDiv = document.createElement("div");
+    const dateLabel = document.createElement("label");
 
-        dateLabel.className = "dateLabel";
-        dateLabel.innerText = formatTime(date);
+    dateLabel.className = "dateLabel";
+    dateLabel.innerText = formatTime(date);
 
-        if (type === "sent") {
-            myDiv.className = "sent";
-            messageDiv.className = "green";
-            messageDiv.textContent = message;
-        } else if (type === "received") {
-            myDiv.className = "received";
-            messageDiv.className = "grey";
-            messageDiv.innerHTML = sanitizeHTML(message); // Sanitize to prevent XSS
-        }
-
-        messageDiv.appendChild(dateLabel);
-        myDiv.appendChild(messageDiv);
-        myLI.appendChild(myDiv);
-        listUL.appendChild(myLI);
+    if (type === "sent") {
+        myDiv.className = "sent";
+        messageDiv.className = "green";
+        messageDiv.textContent = message; // Use textContent for sent messages
+    } else if (type === "received") {
+        myDiv.className = "received";
+        messageDiv.className = "grey";
+        messageDiv.innerHTML = message; // Use innerHTML for received messages
     }
+
+    messageDiv.appendChild(dateLabel);
+    myDiv.appendChild(messageDiv);
+    myLI.appendChild(myDiv);
+    listUL.appendChild(myLI);
+}
+
 
     // Scroll Chat to Bottom
     function scrollToBottom() {

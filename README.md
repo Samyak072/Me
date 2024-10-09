@@ -5,7 +5,6 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 

@@ -16,7 +16,7 @@
                     <img class='socialItemI' src='images/github.svg' alt='GitHub'>
                 </div>
             </a>
-            <a target='_blank' href='https://wa.me/YourWhatsAppNumber'>
+            <a target='_blank' href='https://wa.me/919876543210'>
                 <div class='socialItem'>
                     <img class='socialItemI' src='images/whatsapp.svg' alt='WhatsApp'>
                 </div>
@@ -149,36 +149,35 @@
     }
 
     // Create and Append Message Element
-function createMessageElement(message, type) {
-    const date = new Date();
-    const listUL = document.getElementById("listUL");
+    function createMessageElement(message, type) {
+        const date = new Date();
+        const listUL = document.getElementById("listUL");
 
-    if (!listUL) return;
+        if (!listUL) return;
 
-    const myLI = document.createElement("li");
-    const myDiv = document.createElement("div");
-    const messageDiv = document.createElement("div");
-    const dateLabel = document.createElement("label");
+        const myLI = document.createElement("li");
+        const myDiv = document.createElement("div");
+        const messageDiv = document.createElement("div");
+        const dateLabel = document.createElement("label");
 
-    dateLabel.className = "dateLabel";
-    dateLabel.innerText = formatTime(date);
+        dateLabel.className = "dateLabel";
+        dateLabel.innerText = formatTime(date);
 
-    if (type === "sent") {
-        myDiv.className = "sent";
-        messageDiv.className = "green";
-        messageDiv.textContent = message; // Use textContent for sent messages
-    } else if (type === "received") {
-        myDiv.className = "received";
-        messageDiv.className = "grey";
-        messageDiv.innerHTML = message; // Use innerHTML for received messages
+        if (type === "sent") {
+            myDiv.className = "sent";
+            messageDiv.className = "green";
+            messageDiv.textContent = message; // Use textContent for sent messages
+        } else if (type === "received") {
+            myDiv.className = "received";
+            messageDiv.className = "grey";
+            messageDiv.innerHTML = message; // Use innerHTML for received messages
+        }
+
+        messageDiv.appendChild(dateLabel);
+        myDiv.appendChild(messageDiv);
+        myLI.appendChild(myDiv);
+        listUL.appendChild(myLI);
     }
-
-    messageDiv.appendChild(dateLabel);
-    myDiv.appendChild(messageDiv);
-    myLI.appendChild(myDiv);
-    listUL.appendChild(myLI);
-}
-
 
     // Scroll Chat to Bottom
     function scrollToBottom() {
@@ -298,6 +297,7 @@ function createMessageElement(message, type) {
         const typingIndicator = document.getElementById('typingIndicator');
         if (typingIndicator) {
             typingIndicator.style.display = 'flex';
+            typingIndicator.classList.add('active');
         }
     }
 
@@ -306,6 +306,7 @@ function createMessageElement(message, type) {
         const typingIndicator = document.getElementById('typingIndicator');
         if (typingIndicator) {
             typingIndicator.style.display = 'none';
+            typingIndicator.classList.remove('active');
         }
     }
 

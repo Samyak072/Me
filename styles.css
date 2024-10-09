@@ -1,214 +1,405 @@
-/* General reset */
-* {
-    margin: 0;
+*{
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
-/* Body takes full height and centers the chatbox */
-html, body {
-    height: 100%;
-    background-color: #111b21;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-/* Chatbox wrapper: occupies 50% of screen width, max width 700px */
-#chat-container {
-    width: 50%;
-    height: 90%;
+body{
+    padding-top: 1vh;
     background-color: #1b1b1b;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 700px; /* Ensure it doesn't get too wide */
+    background-size: unset;
+    background-repeat: repeat;
+    height: 98vh;
 }
 
-/* Centering for smaller screens */
-@media screen and (max-width: 768px) {
-    #chat-container {
-        width: 90%; /* Use more screen space on smaller devices */
-    }
-}
-
-/* Navigation bar (top) */
-nav {
+nav{
     display: flex;
-    align-items: center;
-    padding: 10px;
+    height: 6%;
     background-color: #202c33;
-    height: 60px;
 }
 
-.dpimg {
+.navbar{
+    width: 100%;
+    display: flex;
+}
+
+
+.dpimg{
     cursor: pointer;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    margin-right: 10px;
+    border-radius: 100%;
+    width: 5%;
+    height: 5%;
+    height: auto;
+    margin: auto 0px;
+    margin-left: 10px;
 }
 
-.personalInfo {
+.navbar .personalInfo{
+    line-height: 100%;
     display: flex;
     flex-direction: column;
+    margin: auto 0px;
+    margin-left: 2%;
 }
 
-#name {
+.personalInfo #name{
     color: #e9edef;
-    font-weight: bold;
-    font-size: 16px;
+    margin-bottom: 4px;
 }
 
-#lastseen {
+.personalInfo #lastseen{
     color: #8696a0;
-    font-size: 12px;
+    font-size: small;
 }
 
-/* Chat window (scrollable area) */
-.scrollable {
-    flex-grow: 1;
-    overflow-y: auto;
-    background-color: #121b22;
-    padding: 20px;
+
+.scrollable{
+    overflow-y: scroll;
+    color: #fff;
+    display: flex;
+    height: 88%;
+    flex-direction: column;
+    background-image: url('images/bg.webp');
+    align-items: flex-end;
+    position: relative;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    position: relative;
+}
+
+.scrollable .chatting{
+    overflow-y: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width:none; 
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.scrollable .chatting::-webkit-scrollbar {
+    display: none;
+  }
+
+#listUL{
+    overflow-y: hidden;
+    position: static;
+    width: 100%;
+    bottom: 0;
+    list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
-/* No scrollbar */
-.scrollable::-webkit-scrollbar {
-    display: none;
-}
-
-/* Sent and received message bubbles */
-#listUL {
-    list-style-type: none;
+#listUL li{
     width: 100%;
+    text-decoration: none;
+    flex-direction: row-reverse;
 }
 
-.sent {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
+.sent{
+    text-align: end;
+    float: right;
+    width: auto;
+    max-width: 45%;
 }
 
-.green {
-    max-width: 75%;
+.green{
+    margin: 5px;
+    text-align: start;
+    width: auto;
+    padding: 10px;
     background-color: #005c4b;
-    color: white;
-    padding: 10px;
-    border-radius: 8px 8px 0px 8px;
-    font-size: 14px;
+    border-radius: 15px 15px 0px;
 }
 
-.received {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 10px;
-}
-
-.grey {
-    max-width: 75%;
-    background-color: #202c33;
-    color: white;
-    padding: 10px;
-    border-radius: 8px 8px 8px 0px;
-    font-size: 14px;
-}
-
-.dateLabel {
-    font-size: 10px;
+#sentlabel{
     color: #94bab3;
-    text-align: right;
-    margin-top: 5px;
+    display: block;
+    text-align: end;
+    font-size: x-small;
 }
 
-/* Input area (bottom) */
-footer {
+.recieved{
+    float: left;
+    width: 45%;
+    max-width: 45%;
+    background-color: red;
+
+}
+
+
+.grey{
+    max-width: 45%;
+    margin: 5px;
+    text-align: start;
+    width: auto;
+    padding: 10px;
     background-color: #202c33;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-radius: 0px 15px 15px;
 }
 
-.sendBar {
+.grey .mapview{
+    margin: auto;
+    display: flex;
+    padding: 5px;
+}
+
+.add address{
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.map{
+    margin: auto;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dateLabel{
+    color: #94bab3;
+    display: block;
+    text-align: end;
+    font-size: x-small;
+}
+
+
+/* help menu bold words color  */
+
+.sk .bold{
+    color: rgba(219, 154, 33, 0.822);
+}
+
+
+/* resume thumbnail in received class*/
+.resumeThumbnail{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.downloadSpace{
+    background-color: #1d282f;
     display: flex;
     width: 100%;
 }
-
-.sendBar input[type="text"] {
-    flex-grow: 1;
-    padding: 12px;
-    border-radius: 25px;
-    border: none;
-    background-color: #2a3942;
-    color: white;
-    margin-right: 10px;
-    outline: none;
+.downloadSpace .pdfname{
+    display: flex;
+    width: 100%;
 }
-
-.sendBar input[type="text"]::placeholder {
-    color: #8696a0;
+.pdfname label{
+    margin: auto 0px;
 }
-
-.sendBar svg {
+.downloadSpace img{
+    width: 30px;
     cursor: pointer;
-    fill: white;
-    transition: fill 0.3s ease;
+    margin: 5px;
 }
 
-.sendBar svg:hover {
-    fill: #00af9c;
+/* this css is used for embedded html in messages */
+.bold{
+    font-weight: bold;
 }
 
-/* Full-screen profile image */
-.fullScreenDP {
+.alink{
+    color: goldenrod;
+    transition: all 600ms ease;
+    text-decoration: none;
+}
+
+.alink:hover{
+    text-decoration: none;
+    color: green;
+}
+
+/* this css is used for social links message */
+
+.social{
+    padding: 10px;
+}
+
+.social .socialItem{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #94bab3;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 10px;
+    transition: all 500ms ease-in-out;
+}
+
+.social .socialItemI{
+    margin: auto;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.social .socialItem:hover{
+    background-color: rgba(58, 170, 58, 0.863);
+}
+#call{
+    flex-direction: column;
+    text-align: center;
+}
+
+.number{
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+
+
+
+
+.scrollable .fullScreenDP{
+    transition: all 700ms ease-in-out;
+    position: absolute;;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    flex-direction: column;
+    background-color: #2f2f2fec;
+    z-index: 1000;
+}
+
+.scrollable .fullScreenDP .insideDP{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    scrollbar-width: 0px;
 }
 
-.fullScreenDP .insideDP .dp {
-    width: 300px;
-    border-radius: 10px;
-}
-
-.closeBTN {
+.closeBTN{
+    width: 30px;
+    height: 30px;
+    display: block;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    margin-left: 6%;
+    margin-top: 5px;
     cursor: pointer;
-    fill: rgba(255, 255, 255, 0.8);
+    
 }
 
-.closeBTN:hover {
+.btnColor{
+    fill: rgba(0, 0, 0, 0.692);
+    transition: all 400ms ease-in-out;
+}
+
+.closeBTN:hover .btnColor{
     fill: red;
 }
 
-/* Mobile responsiveness for smaller screens */
-@media screen and (max-width: 500px) {
-    #chat-container {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
+
+
+.scrollable .fullScreenDP .insideDP .dp{
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    height: auto;
+    background-color: #202c33;
+    text-align: center;
+}
+
+.sendBar{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+.sendBar svg{
+    margin: auto;
+    height: 40%;
+    min-height: 40%;
+
+}
+
+.sendBar input[type='text']{
+    margin: auto;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    float: left;
+    width: 80%;
+    height: 100%;
+    outline-color: transparent;
+    accent-color: transparent;
+    background-color: #2a3942;
+    outline: none;
+    border-color: transparent;
+}
+
+
+::placeholder { 
+    color: #8696a0;
+    opacity: 1; 
+  }
+  
+  :-ms-input-placeholder { 
+    color: #8696a0;
+  }
+  
+  ::-ms-input-placeholder { 
+    color: #8696a0;
+  }
+
+
+
+@media screen and (min-width: 1024px) {
+
+    body{
+        margin: auto;
+        width: 50vw;
     }
 
-    .dpimg {
-        width: 35px;
-        height: 35px;
+    .sendBar{
+        width: 85%;
+    }
+
+    .scrollable{
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+        position: relative;
+        overflow: hidden;
+    }
+
+    
+
+    .scrollable .fullScreenDP{
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+
+    .scrollable .fullScreenDP .insideDP{
+        display: flex;
+        width: 70%;
+    }
+
+
+    .scrollable .fullScreenDP .dp{
+        width: 50%;
+        margin: auto;
+    }
+
+    .scrollable .closeBTN{
+        margin-top: 15px;
+    }
+
+    #call:hover .number{
+        display: block;
+        height: auto;
     }
 }

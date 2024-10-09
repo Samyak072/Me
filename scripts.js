@@ -217,13 +217,13 @@
                     <span class='sk'>
                         Send a keyword to get what you want to know about me...<br>
                         e.g.<br>
-                        <span class='bold'>'skills'</span> to know my skills<br>
-                        <span class='bold'>'resume'</span> to get my resume<br>
-                        <span class='bold'>'education'</span> to get my education details<br>
-                        <span class='bold'>'address'</span> to get my address<br>
-                        <span class='bold'>'contact'</span> to get ways to connect with me<br>
-                        <span class='bold'>'projects'</span> to get details of my projects<br>
-                        <span class='bold'>'clear'</span> to clear conversation<br>
+                        <span class='bold'>'Skills'</span> to know my skills<br>
+                        <span class='bold'>'Resume'</span> to get my resume<br>
+                        <span class='bold'>'Education'</span> to get my education details<br>
+                        <span class='bold'>'Address'</span> to get my address<br>
+                        <span class='bold'>'Contact'</span> to get ways to connect with me<br>
+                        <span class='bold'>'Projects'</span> to get details of my projects<br>
+                        <span class='bold'>'Clear'</span> to clear conversation<br>
                     </span>
                 `);
                 break;

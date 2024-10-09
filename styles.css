@@ -76,15 +76,16 @@ nav {
    Scrollable Chat Area Styles
 ===================================== */
 .scrollable {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    background-color: #121212;
-    background-image: url('images/bg.webp');
-    background-repeat: repeat;
-    background-size: cover;
+    /* Existing styles */
+    background: linear-gradient(-45deg, #f5f7fa, #c3cfe2, #a7c0d8, #f5f7fa);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .chatting {
@@ -93,7 +94,10 @@ nav {
     padding: 20px;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
+
+
 
 .chatting::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */

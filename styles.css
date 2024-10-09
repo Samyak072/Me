@@ -247,7 +247,7 @@ nav {
 
 .received {
     align-self: flex-start;
-    background-color: CCFF00; /* Lavender */
+    background-color: #FFFF00; /* Lavender */
     color: #AA0000; /* Black text for contrast */
     border-bottom-left-radius: 0;
     border-radius: 15px;

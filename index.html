@@ -37,17 +37,21 @@
 </head>
 
 <body>
-    <nav>
-        <div class="navbar">
-            <img class="dpimg" src="images/squareDp.jpg" alt="Profile Picture of Samyak" onclick="toggleFullScreenDP()">
-            <div class="personalInfo">
-                <label id="name">Samyak</label>
-                <label id="lastseen">Last seen today at 12:00</label>
-                <button id="toggleDarkMode" aria-label="Toggle Dark Mode">🌙</button>
-
-            </div>
+   <!-- Example: Adding Toggle Button in the Navigation Bar -->
+<nav>
+    <div class="navbar">
+        <img class="dpimg" src="images/squareDp.jpg" alt="Profile Picture of Samyak" onclick="toggleFullScreenDP()">
+        <div class="personalInfo">
+            <label id="name">Samyak</label>
+            <label id="lastseen">Last seen today at 12:00</label>
         </div>
-    </nav>
+        <!-- Dark Mode Toggle Button -->
+        <button id="toggleDarkMode" aria-label="Toggle Dark Mode" class="dark-mode-toggle">
+            🌙
+        </button>
+    </div>
+</nav>
+
 
     <div class="scrollable" id="scrollable">
         <div class="fullScreenDP" id="fullScreenDP">

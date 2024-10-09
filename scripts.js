@@ -53,7 +53,7 @@
         </div>
     `;
 
-    const addressString = "Currently available for remote work only.";
+    const addressString = "I am originally from Durgapur, but now I am in Kolkata.";
 
     // Initialize Chat
     function init() {
@@ -206,7 +206,7 @@
                 await delay(2000);
                 sendTextMessage(`
                     Hello there 👋🏻 <br><br>
-                    My name is <span class='bold'><a class='alink'>Samyak</a>.</span><br><br>
+                    My name is <span class='bold'><a class='alink'>Samyak Mishra</a>.</span><br><br>
                     Aspiring SDE | C++ | Java | Golang | ML | DSA | OS Contributor | Content Writer | Public Speaker | <span class='bold'>👨🏻‍💻📚</span><br><br>
                     I am interested in solving DSA problems and unravelling different CS concepts.<br><br>
                     Send <span class='bold'>'more'</span> to know more about me.<br>
@@ -217,13 +217,13 @@
                     <span class='sk'>
                         Send a keyword to get what you want to know about me...<br>
                         e.g.<br>
-                        <span class='bold'>'skills'</span> - to know my skills<br>
-                        <span class='bold'>'resume'</span> - to get my resume<br>
-                        <span class='bold'>'education'</span> - to get my education details<br>
-                        <span class='bold'>'address'</span> - to get my address<br>
-                        <span class='bold'>'contact'</span> - to get ways to connect with me<br>
-                        <span class='bold'>'projects'</span> - to get details of my projects<br>
-                        <span class='bold'>'clear'</span> - to clear conversation<br>
+                        <span class='bold'>'skills'</span> to know my skills<br>
+                        <span class='bold'>'resume'</span> to get my resume<br>
+                        <span class='bold'>'education'</span> to get my education details<br>
+                        <span class='bold'>'address'</span> to get my address<br>
+                        <span class='bold'>'contact'</span> to get ways to connect with me<br>
+                        <span class='bold'>'projects'</span> to get details of my projects<br>
+                        <span class='bold'>'clear'</span> to clear conversation<br>
                     </span>
                 `);
                 break;
@@ -240,7 +240,7 @@
                         </span><br><br>
                         I have experience with the following technologies:<br>
                         <span class='bold'>
-                            TensorFlow<br>Pytorch<br>Keras<br>OpenCV<br>AWS (Learning) <br>... etc.
+                            TensorFlow<br>Pytorch<br>Keras<br>OpenCV<br>... etc.
                         </span><br><br>
                     </span>
                 `);

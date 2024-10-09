@@ -48,7 +48,7 @@
 html, body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, lightblue 20%, #1e1e1e 20%, #1e1e1e 80%, lightblue 80%);
+    background-color: #1e1e1e;
     color: var(--text-color);
     overflow: hidden; /* Prevent double scrollbars */
 }
@@ -140,8 +140,6 @@ nav {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     transition: background 0.5s ease;
-    max-width: 800px; /* Set maximum width as desired */
-    margin: 0 auto;    /* Center the chat box horizontally */
 }
 
 .scrollable::before {
@@ -375,28 +373,16 @@ footer {
     position: relative;
 }
 
-.sendBar .input-container {
-    flex: 1;
-    padding: 5px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border-radius: 20px;
-    backdrop-filter: blur(5px); /* Glassmorphism effect */
-    transition: background 0.3s ease;
-}
-
-.sendBar .input-container:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 .sendBar input[type='text'] {
-    width: 100%;
+    flex: 1;
     padding: 10px 15px;
     border: none;
     border-radius: 20px;
-    background: transparent; /* Remove default background */
+    background-color: #3a3a3a;
     color: #fff;
     font-size: 1rem;
     outline: none;
+    transition: background-color 0.3s ease;
 }
 
 .sendBar input[type='text']::placeholder {
@@ -404,7 +390,7 @@ footer {
 }
 
 .sendBar input[type='text']:focus {
-    background: transparent;
+    background-color: #4a4a4a;
 }
 
 .sendBar svg {
@@ -566,10 +552,6 @@ footer {
    Responsive Styles
 ===================================== */
 @media (max-width: 767px) {
-    html, body {
-        background: linear-gradient(to right, lightblue 10%, #1e1e1e 10%, #1e1e1e 90%, lightblue 90%);
-    }
-
     .scrollable, .chatting {
         padding: 15px;
     }

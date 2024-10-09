@@ -1,3 +1,11 @@
+/* =====================================
+   Import Google Fonts
+===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* =====================================
+   CSS Variables for Theme Management
+===================================== */
 :root {
     /* Light Mode Variables */
     --primary-color: #0084ff;
@@ -14,6 +22,7 @@
 }
 
 .dark-mode {
+    /* Dark Mode Variables */
     --primary-color: #1e90ff;
     --secondary-color: #00ced1;
     --background-gradient-start: #1c1c1c;
@@ -26,41 +35,6 @@
     --scrollbar-thumb-color: rgba(30, 144, 255, 0.6);
     --scrollbar-thumb-hover-color: rgba(30, 144, 255, 0.8);
 }
-
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin-left: auto; /* Pushes the button to the right */
-    color: var(--text-color);
-    transition: transform 0.3s ease;
-}
-
-.dark-mode-toggle:hover {
-    transform: scale(1.2);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =====================================
-   Import Google Fonts
-===================================== */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* =====================================
    Reset and Global Styles
@@ -75,7 +49,7 @@ html, body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: var(--text-color);
     overflow: hidden; /* Prevent double scrollbars */
 }
 
@@ -123,12 +97,34 @@ nav {
 .personalInfo #name {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #f0f0f0;
+    color: var(--text-color);
 }
 
 .personalInfo #lastseen {
     font-size: 0.85rem;
-    color: #a0a0a0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =====================================
+   Dark Mode Toggle Button Styles
+===================================== */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: auto; /* Pushes the button to the far right of the navbar */
+    color: var(--text-color);
+    transition: transform 0.3s ease, color 0.5s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+.dark-mode-toggle:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px var(--primary-color); /* Add custom focus indicator */
 }
 
 /* =====================================
@@ -146,6 +142,20 @@ nav {
     transition: background 0.5s ease;
 }
 
+.scrollable::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/subtle-pattern.png'); /* Replace with your pattern image */
+    opacity: 0.05; /* Adjust opacity for subtlety */
+    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+    z-index: 1;
+}
+
+/* Gradient Animation */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -166,8 +176,9 @@ nav {
     -ms-overflow-style: none;  /* IE and Edge */
     background: inherit; /* Inherits the animated gradient from .scrollable */
     transition: background 0.5s ease;
+    position: relative;
+    z-index: 2; /* Ensure messages appear above the overlay */
 }
-
 
 /* Scrollbar Customization for Webkit Browsers */
 .chatting::-webkit-scrollbar {
@@ -180,13 +191,13 @@ nav {
 }
 
 .chatting::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 132, 255, 0.6);
+    background-color: var(--scrollbar-thumb-color);
     border-radius: 4px;
     border: 2px solid rgba(0, 132, 255, 0.1);
 }
 
 .chatting::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 132, 255, 0.8);
+    background-color: var(--scrollbar-thumb-hover-color);
 }
 
 /* =====================================
@@ -217,15 +228,15 @@ nav {
 
 .sent {
     align-self: flex-end;
-    background-color: rgba(0, 132, 255, 0.8); /* Semi-transparent blue */
-    color: #ffffff;
+    background-color: var(--sent-message-bg);
+    color: var(--text-color);
     border-bottom-right-radius: 0;
 }
 
 .received {
     align-self: flex-start;
-    background-color: rgba(44, 44, 44, 0.8); /* Semi-transparent dark */
-    color: #ffffff;
+    background-color: var(--received-message-bg);
+    color: var(--text-color);
     border-bottom-left-radius: 0;
 }
 
@@ -240,13 +251,13 @@ nav {
 
 .sent::after {
     right: -10px;
-    border-top: 10px solid rgba(0, 132, 255, 0.8);
+    border-top: 10px solid var(--sent-message-bg);
     border-left: 10px solid transparent;
 }
 
 .received::after {
     left: -10px;
-    border-top: 10px solid rgba(44, 44, 44, 0.8);
+    border-top: 10px solid var(--received-message-bg);
     border-right: 10px solid transparent;
 }
 
@@ -262,13 +273,13 @@ nav {
 }
 
 .alink {
-    color: #ffa500;
+    color: var(--link-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .alink:hover {
-    color: #ff4500;
+    color: var(--link-hover-color);
 }
 
 /* =====================================
@@ -388,17 +399,17 @@ footer {
     margin-left: 15px;
     cursor: pointer;
     transition: transform 0.3s ease, fill 0.3s ease;
-    fill: #0084ff;
+    fill: var(--primary-color);
 }
 
 .sendBar svg:hover {
     transform: scale(1.1);
-    fill: #00aaff;
+    fill: var(--secondary-color);
 }
 
 .sendBar svg:active {
     transform: scale(0.95);
-    fill: #00aaff;
+    fill: var(--secondary-color);
 }
 
 /* =====================================
@@ -523,7 +534,7 @@ footer {
 .typing-indicator .dot {
     width: 8px;
     height: 8px;
-    background-color: #ffffff;
+    background-color: var(--text-color);
     border-radius: 50%;
     opacity: 0.5;
     animation: blink 1.4s infinite both;
@@ -577,6 +588,10 @@ footer {
         width: 25px;
         height: 25px;
     }
+
+    .dark-mode-toggle {
+        font-size: 1.2rem;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -588,7 +603,7 @@ footer {
     .scrollable, .chatting {
         padding: 18px;
     }
-    
+
     .sendBar input[type='text'] {
         font-size: 1rem;
     }
@@ -628,5 +643,3 @@ footer {
         transition: none !important;
     }
 }
-
-

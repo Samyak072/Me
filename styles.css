@@ -1,404 +1,333 @@
-*{
+/* =====================================
+   Reset and Global Styles
+===================================== */
+html, body {
     padding: 0;
     margin: 0;
     font-family: Verdana, Tahoma, sans-serif;
-}
-
-body{
-    padding-top: 1vh;
     background-color: #1b1b1b;
-    background-size: unset;
+    background-image: url('images/bg.webp');
     background-repeat: repeat;
+    background-size: unset;
+    color: #fff;
     height: 98vh;
+    padding-top: 1vh;
 }
 
-nav{
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* =====================================
+   Navigation Styles
+===================================== */
+nav {
     display: flex;
     height: 6%;
     background-color: #202c33;
 }
 
-.navbar{
+.navbar {
     width: 100%;
     display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
 
-
-.dpimg{
+.dpimg {
     cursor: pointer;
-    border-radius: 100%;
-    width: 5%;
-    height: 5%;
-    height: auto;
-    margin: auto 0px;
-    margin-left: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-.navbar .personalInfo{
-    line-height: 100%;
+.personalInfo {
     display: flex;
     flex-direction: column;
-    margin: auto 0px;
-    margin-left: 2%;
 }
 
-.personalInfo #name{
+.personalInfo #name {
     color: #e9edef;
     margin-bottom: 4px;
 }
 
-.personalInfo #lastseen{
+.personalInfo #lastseen {
     color: #8696a0;
     font-size: small;
 }
 
-
-.scrollable{
+/* =====================================
+   Scrollable Area Styles
+===================================== */
+.scrollable {
+    flex: 1;
     overflow-y: scroll;
-    color: #fff;
     display: flex;
-    height: 88%;
     flex-direction: column;
-    background-image: url('images/bg.webp');
     align-items: flex-end;
     position: relative;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
-    position: relative;
 }
 
-.scrollable .chatting{
-    overflow-y: scroll;
-    -ms-overflow-style: none; 
-    scrollbar-width:none; 
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.scrollable .chatting::-webkit-scrollbar {
+.scrollable::-webkit-scrollbar {
     display: none;
-  }
+}
 
-#listUL{
-    overflow-y: hidden;
-    position: static;
+.chatting {
+    flex: 1;
     width: 100%;
-    bottom: 0;
-    list-style-type: none;
+    overflow-y: auto;
+}
+
+#listUL {
+    list-style: none;
     display: flex;
     flex-direction: column;
-}
-
-#listUL li{
     width: 100%;
-    text-decoration: none;
-    flex-direction: row-reverse;
-}
-
-.sent{
-    text-align: end;
-    float: right;
-    width: auto;
-    max-width: 45%;
-}
-
-.green{
-    margin: 5px;
-    text-align: start;
-    width: auto;
     padding: 10px;
+}
+
+#listUL li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.sent {
+    align-self: flex-end;
     background-color: #005c4b;
-    border-radius: 15px 15px 0px;
-}
-
-#sentlabel{
     color: #94bab3;
-    display: block;
-    text-align: end;
-    font-size: x-small;
-}
-
-.recieved{
-    float: left;
-    width: 45%;
-    max-width: 45%;
-    background-color: red;
-
-}
-
-
-.grey{
-    max-width: 45%;
-    margin: 5px;
-    text-align: start;
-    width: auto;
     padding: 10px;
-    background-color: #202c33;
-    border-radius: 0px 15px 15px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 45%;
 }
 
-.grey .mapview{
-    margin: auto;
-    display: flex;
-    padding: 5px;
-}
-
-.add address{
-    margin-top: 10px;
-    padding-left: 15px;
-}
-
-.map{
-    margin: auto;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.dateLabel{
-    color: #94bab3;
+.sent::after {
+    content: "";
     display: block;
-    text-align: end;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #202c33;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 15px 15px 15px;
+    max-width: 45%;
+}
+
+.dateLabel {
+    color: #94bab3;
     font-size: x-small;
+    text-align: end;
+    margin-top: 5px;
 }
 
-
-/* help menu bold words color  */
-
-.sk .bold{
-    color: rgba(219, 154, 33, 0.822);
-}
-
-
-/* resume thumbnail in received class*/
-.resumeThumbnail{
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
-}
-
-.downloadSpace{
-    background-color: #1d282f;
-    display: flex;
-    width: 100%;
-}
-.downloadSpace .pdfname{
-    display: flex;
-    width: 100%;
-}
-.pdfname label{
-    margin: auto 0px;
-}
-.downloadSpace img{
-    width: 30px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-/* this css is used for embedded html in messages */
-.bold{
+/* =====================================
+   Embedded Content Styles
+===================================== */
+.bold {
     font-weight: bold;
 }
 
-.alink{
+.alink {
     color: goldenrod;
-    transition: all 600ms ease;
+    transition: color 300ms ease;
     text-decoration: none;
 }
 
-.alink:hover{
-    text-decoration: none;
+.alink:hover {
     color: green;
 }
 
-/* this css is used for social links message */
-
-.social{
+.social {
     padding: 10px;
 }
 
-.social .socialItem{
+.social .socialItem {
     width: 100%;
     border-radius: 10px;
     background-color: #94bab3;
     cursor: pointer;
     display: flex;
+    align-items: center;
+    padding: 10px;
     margin-bottom: 10px;
-    transition: all 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
 }
 
-.social .socialItemI{
+.social .socialItemI {
     margin: auto;
-    padding: 10px;
+    display: flex;
     flex-direction: column;
 }
 
-.social .socialItem:hover{
+.social .socialItem:hover {
     background-color: rgba(58, 170, 58, 0.863);
 }
-#call{
-    flex-direction: column;
-    text-align: center;
+
+#call:hover .number {
+    display: block;
+    height: auto;
 }
 
-.number{
+.number {
     display: none;
 }
 
-
-
-
-.scrollable .fullScreenDP{
-    transition: all 700ms ease-in-out;
-    position: absolute;;
+/* =====================================
+   Full Screen DP Styles
+===================================== */
+.fullScreenDP {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: none;
     flex-direction: column;
-    background-color: #2f2f2fec;
+    background-color: rgba(47, 47, 47, 0.8);
     z-index: 1000;
+    transition: opacity 700ms ease-in-out;
 }
 
-.scrollable .fullScreenDP .insideDP{
+.fullScreenDP.active {
     display: flex;
-    margin: auto;
-    scrollbar-width: 0px;
+    opacity: 1;
 }
 
-.closeBTN{
+.insideDP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    overflow: hidden;
+}
+
+.dp {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.closeBTN {
     width: 30px;
     height: 30px;
-    display: block;
     position: absolute;
-    margin-left: 6%;
-    margin-top: 5px;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
-    
 }
 
-.btnColor{
+.btnColor {
     fill: rgba(0, 0, 0, 0.692);
-    transition: all 400ms ease-in-out;
+    transition: fill 400ms ease-in-out;
 }
 
-.closeBTN:hover .btnColor{
+.closeBTN:hover .btnColor {
     fill: red;
 }
 
-
-
-.scrollable .fullScreenDP .insideDP .dp{
-    width: 90%;
-    margin: auto;
-    border-radius: 10px;
-}
-
-
-
-
-
-
-
-footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
+/* =====================================
+   Footer Styles
+===================================== */
+footer {
     width: 100%;
+    background-color: #202c33;
     color: white;
     text-align: center;
-    height: auto;
-    background-color: #202c33;
-    text-align: center;
+    padding: 10px 0;
 }
 
-.sendBar{
+.sendBar {
     display: flex;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-}
-.sendBar svg{
-    margin: auto;
-    height: 40%;
-    min-height: 40%;
-
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.sendBar input[type='text']{
-    margin: auto;
+.sendBar input[type='text'] {
+    flex: 1;
     margin: 5px;
-    border-radius: 10px;
     padding: 10px;
-    color: #fff;
-    float: left;
-    width: 80%;
-    height: 100%;
-    outline-color: transparent;
-    accent-color: transparent;
+    border-radius: 10px;
     background-color: #2a3942;
-    outline: none;
-    border-color: transparent;
+    color: #fff;
+    border: none;
 }
 
-
-::placeholder { 
+.sendBar input[type='text']::placeholder {
     color: #8696a0;
-    opacity: 1; 
-  }
-  
-  :-ms-input-placeholder { 
-    color: #8696a0;
-  }
-  
-  ::-ms-input-placeholder { 
-    color: #8696a0;
-  }
+}
 
+.sendBar svg {
+    cursor: pointer;
+    margin-left: 10px;
+    height: 24px;
+    width: 24px;
+    transition: transform 200ms ease;
+}
 
+.sendBar svg:hover {
+    transform: scale(1.2);
+}
 
-@media screen and (min-width: 1024px) {
-
-    body{
-        margin: auto;
-        width: 50vw;
+/* =====================================
+   Responsive Styles
+===================================== */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        width: 70vw;
     }
 
-    .sendBar{
+    .sendBar {
+        width: 90%;
+    }
+
+    /* Tablet-specific styles */
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        width: 50vw;
+        margin: 0 auto;
+    }
+
+    .sendBar {
         width: 85%;
     }
 
-    .scrollable{
-        -ms-overflow-style: none; 
-        scrollbar-width: none; 
-        position: relative;
+    .scrollable {
         overflow: hidden;
     }
 
-    
-
-    .scrollable .fullScreenDP{
-        display: none;
+    .fullScreenDP {
         width: 100%;
         height: 100%;
-        overflow-y: scroll;
     }
 
-
-    .scrollable .fullScreenDP .insideDP{
-        display: flex;
+    .insideDP {
         width: 70%;
     }
 
-
-    .scrollable .fullScreenDP .dp{
+    .dp {
         width: 50%;
         margin: auto;
     }
 
-    .scrollable .closeBTN{
-        margin-top: 15px;
+    .closeBTN {
+        top: 15px;
+        right: 15px;
     }
 
-    #call:hover .number{
+    /* Display number on hover */
+    #call:hover .number {
         display: block;
         height: auto;
     }

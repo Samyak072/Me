@@ -643,26 +643,3 @@ footer {
         transition: none !important;
     }
 }
-
-/* =====================================
-   Intro Section Styles
-===================================== */
-.intro-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Example gradient */
-    padding: 20px; /* Adds space inside the container */
-    border-radius: 10px; /* Rounds the corners of the container */
-    color: #ffffff; /* Sets the text color to white for better contrast */
-    margin: 20px; /* Adds space outside the container */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
-    background-size: cover; /* Ensures the background covers the entire container */
-    background-repeat: no-repeat; /* Prevents the background from repeating */
-    /* Optional: Add transition for smooth background changes */
-    transition: background 0.5s ease;
-}
-
-
-
-
-
-
-

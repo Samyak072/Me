@@ -238,14 +238,14 @@ nav {
 
 .sent {
     align-self: flex-end;
-    background-color: var(--sent-message-bg);
+    background-color: #b3d9ff ;
     color: var(--text-color);
     border-bottom-right-radius: 0;
 }
 
 .received {
     align-self: flex-start;
-    background-color: var(--received-message-bg);
+    background-color: #e6f2ff;
     color: var(--text-color);
     border-bottom-left-radius: 0;
 }
